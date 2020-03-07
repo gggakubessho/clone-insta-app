@@ -1,0 +1,23 @@
+<h2>Change your password</h2>
+
+<%= form_with model: @user, url: update_password_users_path, method: :patch do |f| %>
+  <%= render "devise/shared/error_messages",resource: @user %>
+  <div class="field">
+    <%= f.label :password, "Current password" %><br />
+    <%= f.password_field :current_password, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "New password" %><br />
+    <%= f.password_field :password, autofocus: true, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <%= f.password_field :password_confirmation, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Change my password" %>
+  </div>
+<% end %>
