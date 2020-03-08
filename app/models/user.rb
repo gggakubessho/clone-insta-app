@@ -13,10 +13,10 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :user_name, presence: true, uniqueness: true, length: { maximum: 50 }
-  validates :website, allow_nil: true, format: { with: VALID_URL_REGEX }
+  validates :website, allow_blank: true, format: { with: VALID_URL_REGEX }
   validates :email, allow_blank: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX }
-  validates :tel, allow_nil: true, format: { with: VALID_TEL_REGEX }
+  validates :tel, allow_blank: true, format: { with: VALID_TEL_REGEX }
 
   def downcase_email
     self.email = email.downcase if email.present?

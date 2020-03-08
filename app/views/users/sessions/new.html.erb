@@ -1,19 +1,19 @@
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+<fieldset class="form-group">
+  <div class="form-group">
     <%= f.label :user_name %><br />
-    <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name" %>
+    <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name",class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password",class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in",class: "btn btn-primary" %>
   </div>
+</fieldset>  
 <% end %>
-
-<%= render "users/shared/links" %>

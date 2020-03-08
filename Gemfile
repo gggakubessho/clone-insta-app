@@ -2,7 +2,8 @@
 
 source 'https://rubygems.org'
 
-gem 'bcrypt',       '3.1.12'
+gem 'bcrypt', '3.1.12'
+gem 'bootstrap-sass', '3.3.7'
 gem 'coffee-rails', '4.2.2'
 gem 'devise'
 gem 'devise-i18n'
