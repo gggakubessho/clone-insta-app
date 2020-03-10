@@ -1,3 +1,13 @@
-form_for(@image) do |f|
-  = f.file_field :image
-end
+<% provide(:title, 'My images') %>
+<h1>My images</h1>
+<div class="action-list">
+  <p><%= link_to "Upload image", new_image_path,class: "btn btn-password" %></p>
+</div>
+
+<%= will_paginate @images,:previous_label => ' &lt Back', :next_label => 'Next &gt' %>
+<ul class="images">
+  <% @images.each do |image| %>
+     <%= render image %>
+  <% end %>
+</ul>
+<%= will_paginate @images,:previous_label => ' &lt Back', :next_label => 'Next &gt' %>
