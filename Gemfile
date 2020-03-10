@@ -4,12 +4,14 @@ source 'https://rubygems.org'
 
 gem 'bcrypt', '3.1.12'
 gem 'bootstrap-sass', '3.3.7'
+gem 'carrierwave', '1.2.2'
 gem 'coffee-rails', '4.2.2'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'jbuilder',     '2.6.4'
 gem 'jquery-rails', '4.3.1'
+gem 'mini_magick', '4.7.0'
 gem 'puma', '3.9.1'
 gem 'rails', '5.1.6'
 gem 'rails-i18n', '~> 5.1'
@@ -40,6 +42,7 @@ group :test do
 end
 
 group :production do
+  gem 'fog', '1.42'
   gem 'pg', '0.20.0'
 end
 

@@ -16,10 +16,10 @@ class UsersController < ApplicationController
 
     if @user.update_with_password(user_params)
       bypass_sign_in(@user)
-      flash[:notice] = 'パスワードが変更されました'
+      flash[:notice] = 'succeeded change password'
       redirect_to edit_user_path(@user)
     else
-      flash.now[:alert] = '変更に失敗しました'
+      flash.now[:alert] = 'failed change password'
       render 'edit'
     end
   end
