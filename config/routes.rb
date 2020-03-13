@@ -21,5 +21,8 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :images, only: [:index,:new,:create] 
+  resources :images, only: [:index,:new,:create] do
+    resources :comments, only: [:index,:new,:create] 
+  end
+    
 end
