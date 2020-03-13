@@ -2,6 +2,8 @@
 
 class User < ApplicationRecord
   has_many :images, dependent: :destroy
+  has_many :comments, foreign_key: 'from_user_id', dependent: :destroy, inverse_of: :user
+
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable, authentication_keys: [:user_name]
   before_save :downcase_email
