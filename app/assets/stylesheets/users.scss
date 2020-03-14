@@ -1,0 +1,15 @@
+/* Show User */
+.image-list-group-flex {
+    margin:10px;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.image-flex {    
+    width:30%;
+    margin:2.5px;
+    text-align: center;
+    .image {
+        width: 200px;
+    }
+}

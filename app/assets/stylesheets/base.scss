@@ -30,15 +30,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-.content-width {
-  max-width: 920px;
-  padding-left: 50px;
-  padding-right: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-}
-
 .alert {
   margin: 10px;
   border-radius:8px;
@@ -145,6 +136,9 @@ p {
   line-height: 1.7em;
 }
 
+ul{
+  list-style: none;
+}
 
 /* header */
 
@@ -192,31 +186,4 @@ aside {
       margin-top: 0px;
     }
   }
-}
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
-}
-
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-  a {
-    padding: 0;
-  }
-}
-
-/* pagination */
-
-.pagenation-parent{
-  margin:0px;
-  text-align: center;
 }
