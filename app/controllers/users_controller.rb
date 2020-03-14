@@ -3,7 +3,10 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  def show; end
+  def show
+    @user = current_user
+    @images = @user.images
+  end
 
   def index; end
 
