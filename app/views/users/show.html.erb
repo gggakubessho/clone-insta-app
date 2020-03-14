@@ -5,7 +5,9 @@
   <section class="profile">
     <%= gravatar_for @user %>
     <%= @user.profile %>
-    <%= link_to "EditProfile", edit_user_registration_path,class: "btn btn-edit-user" %>
+    <% if @user == current_user %>
+      <%= link_to "EditProfile", edit_user_registration_path,class: "btn btn-edit-user" %>
+    <% end %>
   </section>
   <section class="stats">
     <ul class="stat-list-group">
