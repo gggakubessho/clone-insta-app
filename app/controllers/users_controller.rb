@@ -5,7 +5,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id:params[:id])
-    @images = @user.images
+    if @user
+      @images = @user.images
+    else
+      redirect_to root_path
+    end
   end
 
   def index; end
