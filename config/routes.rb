@@ -14,7 +14,8 @@ Rails.application.routes.draw do
     get 'sign_in',  to: 'users/sessions#new'
     get 'sign_out', to: 'users/sessions#destroy'
   end
-
+  
+  resources :relationships,       only: [:create, :destroy]
   resources :users, only: [:show]
   resources :users, only: [:edit] do
     collection do
@@ -25,5 +26,5 @@ Rails.application.routes.draw do
   resources :images, only: [:index,:new,:create] do
     resources :comments, only: [:index,:new,:create] 
   end
-    
+
 end
