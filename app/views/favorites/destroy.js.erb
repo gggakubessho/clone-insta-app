@@ -1,0 +1,2 @@
+$("#like-form-<%= @image.id %>").html
+("<%= escape_javascript(render('home/like',{image: @image})) %>");

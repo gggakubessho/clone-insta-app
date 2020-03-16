@@ -1,22 +1,11 @@
 <li class="list-group-item">
   <div class="image">
-    <%= image_tag object.image_url,class:"center-block" %>
+    <%= image_tag image.image_url,class:"center-block" %>
   </div>
-  <ul class="comments list-group">
-    <% object.comments.each do |comment| %>
-       <li class="list-group-item">
-         <%= comment.content %>
-       </li>
-    <% end %>
+  <ul id="comment-<%= image.id %>" class="comments list-group">
+    <%= render 'comments/comment',image: image %>
   </ul>
-  <%= form_with model: @comment,url: image_comments_path(object.id) do |f| %>
-    <fieldset class="form-group">
-      <div class="form-group">
-         <%= f.text_area :content , autocomplete:"content",class:"form-control" %>
-      </div>
-      <div class="actions">
-         <%= f.submit "Post",class: "btn btn-primary" %>
-      </div>
-    </fieldset>
-  <% end %>
+  <div id="comment-form-<%= image.id %>">
+    <%= render 'comments/comment_form',image: image %>
+  </div>
 </li>
