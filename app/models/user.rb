@@ -76,4 +76,10 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
+  
+  def feed
+    following_ids = "SELECT followed_id FROM relationships
+                     WHERE follower_id = :user_id"
+    Image.where("user_id IN (#{following_ids})", user_id: id)
+  end  
 end

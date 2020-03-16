@@ -1,15 +1,15 @@
 <li class="list-group-item">
   <div class="image">
-    <%= image_tag image.image_url,class:"center-block" %>
+    <%= image_tag object.image_url,class:"center-block" %>
   </div>
   <ul class="comments list-group">
-    <% image.comments.each do |comment| %>
+    <% object.comments.each do |comment| %>
        <li class="list-group-item">
          <%= comment.content %>
        </li>
     <% end %>
   </ul>
-  <%= form_with model: @comment,url: image_comments_path(image.id) do |f| %>
+  <%= form_with model: @comment,url: image_comments_path(object.id) do |f| %>
     <fieldset class="form-group">
       <div class="form-group">
          <%= f.text_area :content , autocomplete:"content",class:"form-control" %>
@@ -18,5 +18,5 @@
          <%= f.submit "Post",class: "btn btn-primary" %>
       </div>
     </fieldset>
-<% end %>
+  <% end %>
 </li>

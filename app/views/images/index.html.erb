@@ -7,7 +7,7 @@
 <%= will_paginate @images,class:"pagenation-parent",:previous_label => ' &lt Back', :next_label => 'Next &gt' %>
   <ul class="content list-group">
       <% @images.each do |image| %>
-         <%= render image %>
+         <%= render "image",object: image %>
       <% end %>
   </ul>
 
