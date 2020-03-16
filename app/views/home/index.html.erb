@@ -3,7 +3,7 @@
   <ul class="content list-group">
       <% @feed_items.each do |image| %>
          <%= render 'like_form',    image: image %>
-         <%= render "images/image", object: image %>
+         <%= render "images/image", image: image %>
       <% end %>
 
 <%= will_paginate @feed_items,class:"pagenation-parent",:previous_label => ' &lt Back', :next_label => 'Next &gt' %>

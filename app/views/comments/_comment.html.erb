@@ -1,15 +1,5 @@
-<ul class="comments">
-  <% image.comments.each do |comment| %>
-     <%= comment.content %>
-  <% end %>
-  <%= form_with model: @comment,url: image_comments_path(image.id) do |f| %>
-    <fieldset class="form-group">
-      <div class="form-group">
-        <%= f.text_area :content , autocomplete:"content" %>
-      </div>
-      <div class="actions">
-       <%= f.submit "Post",class: "btn btn-primary" %>
-      </div>
-  </fieldset>
-  <% end %>
-</ul>
+<% image.comments.each do |comment| %>
+  <li class="list-group-item">
+    <%= comment.content %>
+  </li>
+<% end %>

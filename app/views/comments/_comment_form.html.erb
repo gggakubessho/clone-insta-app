@@ -1,0 +1,10 @@
+<%= form_with model: @comment,url: image_comments_path(image.id),remote: true do |f| %>
+    <fieldset class="form-group">
+      <div class="form-group">
+         <%= f.text_area :content , autocomplete:"content",class:"form-control" %>
+      </div>
+      <div class="actions">
+         <%= f.submit "Post",class: "btn btn-primary" %>
+      </div>
+    </fieldset>
+<% end %>
