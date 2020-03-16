@@ -2,7 +2,7 @@
 
 class User < ApplicationRecord
   has_many :images, dependent: :destroy
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :fav_images, through: :favorites, source: :image
   has_many :comments, foreign_key: 'from_user_id', dependent: :destroy, inverse_of: :user
   has_many :active_relationships, class_name: 'Relationship', foreign_key: 'follower_id',
@@ -93,5 +93,10 @@ class User < ApplicationRecord
   # お気に入り解除
   def unlike(fav_image)
     favorites.find_by(image_id: fav_image.id).destroy
+  end
+
+  # 対象の投稿がお気に入り登録済ならtrueを返す
+  def like?(fav_image)
+    fav_images.include?(fav_image)
   end
 end

@@ -2,7 +2,7 @@
 
 class Image < ApplicationRecord
   belongs_to :user
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :fav_users, through: :favorites, source: :user
   has_many :comments, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
