@@ -1,0 +1,14 @@
+<% provide(:title, 'Notifications') %>
+<h1>Notifications</h1>
+
+<%= will_paginate @notifications,class:"pagenation-parent",:previous_label => ' &lt Back', :next_label => 'Next &gt' %>
+  <ul class="content list-group">
+      <% @notifications.each do |notification| %>
+        <li class="list-group-item">
+         <%= notification.visitor_id %> が
+         <%= notification.image_id %> に
+         <%= notification.action %> しました
+        </li>
+      <% end %>
+  </ul>
+<%= will_paginate @notifications,class:"pagenation-parent",:previous_label => ' &lt Back', :next_label => 'Next &gt' %>

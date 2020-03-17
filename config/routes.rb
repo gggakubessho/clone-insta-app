@@ -17,15 +17,15 @@ Rails.application.routes.draw do
   
   resources :relationships,   only: [:create, :destroy]
   resources :favorites,       only: [:create, :destroy]
-  resources :users, only: [:show]
-  resources :users, only: [:edit] do
+  resources :notifications,   only: :index
+  resources :users,           only: [:show]
+  resources :users,           only: [:edit] do
     collection do
       patch 'update_password'
     end
   end
-  
-  resources :images, only: [:index,:new,:create] do
-    resources :comments, only: [:index,:new,:create] 
+  resources :images,          only: [:index,:new,:create] do
+    resources :comments,      only: [:index,:new,:create] 
   end
 
 end
