@@ -5,6 +5,8 @@ class FavoritesController < ApplicationController
   def create
     @image = Image.find(params[:image_id])
     current_user.like(@image)
+    @image.create_notification_like!(current_user)
+    respond_to :js
     respond_to do |format|
       format.html { redirect_to @image }
       format.js

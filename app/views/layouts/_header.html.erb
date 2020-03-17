@@ -5,6 +5,10 @@
         <% if user_signed_in? %>
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to 'EditProfile', edit_user_registration_path %></li>
+          <li><%= link_to notifications_path do %>
+                <i class="far.fa-bell.fa-lg" style="font-size: 1.5em;"></i>
+              <% end %>
+          </li>
           <li><%= link_to "Logout", sign_out_path %></li>
           <li><%= current_user.user_name %></li>
 
