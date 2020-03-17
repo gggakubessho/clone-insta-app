@@ -6,7 +6,14 @@
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to 'EditProfile', edit_user_registration_path %></li>
           <li><%= link_to notifications_path do %>
-                <i class="far.fa-bell.fa-lg" style="font-size: 1.5em;"></i>
+                <% if unchecked_notifications.any? %>
+                  <span class="fa-stack">
+                    <%= icon("far", "bell fa-lg fa-stack-2x") %>  
+                    <%= icon("fas", "circle n-circle fa-stack-1x") %>  
+                  </span>
+                <% else %>
+                    <%= icon("far", "bell fa-lg") %>
+                <% end %>
               <% end %>
           </li>
           <li><%= link_to "Logout", sign_out_path %></li>
