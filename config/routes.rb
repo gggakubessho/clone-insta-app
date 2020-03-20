@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       patch 'update_password'
     end
   end
+  get 'images/search', to: 'images#search', as: 'search'
   resources :images,          only: [:index,:new,:create] do
     resources :comments,      only: [:index,:new,:create] 
   end
