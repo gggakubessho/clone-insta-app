@@ -22,9 +22,19 @@ class ImagesController < ApplicationController
     @image = current_user.images
   end
 
+  def search
+    @images = search_comments(params[:search]).map(&:image)
+  end
+
   private
 
   def image_params
     params.require(:image).permit(:image_url)
+  end
+
+  def search_comments(search)
+    return Comment.all unless search
+
+    Comment.select(:image_id).distinct.where('content LIKE ?', "%#{search}%")
   end
 end

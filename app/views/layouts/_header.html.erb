@@ -16,6 +16,13 @@
                 <% end %>
               <% end %>
           </li>
+          <li>
+            <p>検索</p>
+              <%= form_tag(search_path,:method => 'get') do %>
+                <%= text_field_tag :search %>
+                <%= submit_tag 'Search', :name => nil %>
+              <% end %>
+          </li>
           <li><%= link_to "Logout", sign_out_path %></li>
           <li><%= current_user.user_name %></li>
 
