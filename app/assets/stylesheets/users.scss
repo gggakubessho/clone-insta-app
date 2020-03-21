@@ -1,15 +1,53 @@
 /* Show User */
-.image-list-group-flex {
-    margin:10px;
-    display:flex;
-    flex-wrap: wrap;
+.user-info {
+    margin: 25px 10px;
+    padding: 25px 10px;
+}
+.user-link{
+    display: flex;  
+    .edit-profile {
+        padding: 5px;
+    }
 }
 
-.image-flex {    
-    width:30%;
-    margin:2.5px;
-    text-align: center;
-    .image {
-        width: 200px;
+.user-name {
+    text-align:center; 
+    padding: 5px;
+}
+
+.user-profile {
+    padding: 5px;
+}
+
+.img-responsive {
+    margin: 5px;
+}
+/* follow */
+.follows-btn{
+    width: 30%;
+    margin-left: 20px;
+}
+.follows{
+
+    border-radius:40px;
+}
+.follow {
+    border:solid 1px;
+}
+
+.unfollow {
+    background-color: #99CCFF;
+}
+
+/* stats */
+.stat-list-group {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0px;
+    li {
+        padding: 5px;
     }
+}
+.stat {
+    font-size: medium;
 }

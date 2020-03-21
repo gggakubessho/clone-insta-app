@@ -49,7 +49,6 @@ textarea {
 
 /* form */
 .action-list {
-  width:60%;
   display:flex;
   flex-direction: row; 
   justify-content: space-around; 
@@ -62,12 +61,8 @@ textarea {
 }
 
 .btn-upload {
+  width:100%;  
   border:solid 1px;
-}
-
-.btn-password {
-  border:solid 1px;
-  width: 100%;
 }
 
 input, textarea, select, .uneditable-input {
@@ -103,10 +98,6 @@ input {
 }
 
 /* header */
-
-// .menu-bar {
-//   float:right;
-// }
 
 .navbar{
   border-radius: 0px;

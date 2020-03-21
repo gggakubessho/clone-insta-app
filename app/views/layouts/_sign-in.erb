@@ -12,11 +12,15 @@
     </div>
 		<ul class="nav navbar-nav navbar-right" >
       <li><%= link_to root_path do %>
-              <%= icon("fas", "home fa-lg") %>
+              <span class="fa-stack">      
+                <%= icon("fas", "home fa-lg fa-stack-2x") %>
+              </span>
           <% end %>
       </li>               
       <li><%= link_to edit_user_registration_path do %>
-              <%= icon("fas", "user-edit fa-lg") %>
+              <span class="fa-stack">
+                <%= icon("fas", "user-edit fa-lg fa-stack-2x") %>
+              </span>
           <% end %>
       </li>              
       <li><%= link_to notifications_path do %>
@@ -26,12 +30,16 @@
                   <%= icon("fas", "circle n-circle fa-stack-1x") %>  
                 </span>
               <% else %>
-                <%= icon("far", "bell fa-lg fa-lg") %>
+                <span class="fa-stack">              
+                  <%= icon("far", "bell fa-lg fa-lg fa-stack-2x") %>
+                </span>
               <% end %>
           <% end %>
       </li>
       <li><%= link_to sign_out_path do %>
-              <%= icon("fas", "sign-out-alt fa-lg") %>
+              <span class="fa-stack">
+                  <%= icon("fas", "sign-out-alt fa-lg fa-stack-2x") %>
+              </span>
           <% end %>
       </li>
 		</ul>
