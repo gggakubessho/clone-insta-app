@@ -1,4 +1,7 @@
-<p class="navbar-text">hello. <%= current_user.user_name %></p>
+<%= link_to root_path do %>
+  <p class="navbar-text">hello. <%= current_user.user_name %></p>
+<% end %>
+
 <div class="menu-bar">
 		<div class="search-form visible-lg visible-md ">		
       <%= form_tag(search_path,:method => 'get',class:"navbar-form navbar-left") do %>

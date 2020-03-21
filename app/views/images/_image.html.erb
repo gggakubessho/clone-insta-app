@@ -1,4 +1,12 @@
 <li class="list-group-item">
+  <% if controller.controller_name =="home" || controller.action_name =="search" %>
+  <div class="center-block">
+    <%= link_to user_path(image.user_id) do %>
+      <%= gravatar_for image.user,size: 20 %>
+      <%= image.user.name %>
+    <% end %>
+  </div>
+  <% end %>
   <div class="image">
     <%= image_tag image.image_url,class:"center-block" %>
   </div>
