@@ -20,7 +20,7 @@
               </span>
           <% end %>
       </li>               
-      <li><%= link_to edit_user_registration_path do %>
+      <li><%= link_to user_path(current_user) do %>
               <span class="fa-stack">
                 <%= icon("fas", "user-edit fa-lg fa-stack-2x") %>
               </span>
