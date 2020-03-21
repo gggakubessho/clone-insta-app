@@ -15,6 +15,7 @@ class User < ApplicationRecord
                                   dependent: :destroy
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id',
                                    dependent: :destroy
+  has_many :noticed_users, through: :passive_notifications, source: :visited
 
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable, authentication_keys: [:user_name]

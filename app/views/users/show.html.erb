@@ -1,42 +1,45 @@
 <% provide(:title, "Show User") %>
-<h1>Show User</h1>
-<div class="row">
-  <aside class="col-md-4" >
-  <section class="profile">
+<h2>Show User</h2>
+<div class="user-info">
+  <div>
     <%= gravatar_for @user %>
-    <%= @user.profile %>
+  </div>
+  <div class="user-link">
+    <div class="user-name"><%= @user.name %></div>
     <% if current_user?(@user) %>
-      <%= link_to "EditProfile", edit_user_registration_path,class: "btn btn-edit-user" %>
+        <div class="edit-profile">
+          <%= link_to "EditProfile", edit_user_registration_path %>
+        </div>
     <% else %>  
-      <%= render 'follow_form' if user_signed_in? %>
-    <% end %>
-  </section>
-  <section class="stats">
-    <ul class="stat-list-group">
-      <li>
-        <a href="<%= images_path %>">
-          image_count:
-          <strong id="images_count" class="stat">
-            <%= @images.count %>
-          </strong>
-        </a>
-          <strong id="following" class="stat">
-            <%= @user.following.count %>
-          </strong>
-          following
-          <strong id="followers" class="stat">
-            <%= @user.followers.count %>
-          </strong>
-          followers
-      </li>
+        <%= render 'follow_form' if user_signed_in? %>
+    <% end %>    
+    </div>
+  <div class="user-profile">
+    <%= @user.profile %>
+  </div>
+  <div>
+      <ul class="stat-list-group">
+        <li>
+          <a href="<%= images_path %>">
+            image_count:
+            <strong id="images_count" class="stat"><%= @images.count %></strong>
+          </a>
+        </li>
+        <li>
+          following:
+          <strong id="following" class="stat"><%= @user.following.count %></strong>
+        </li>
+        <li>
+          followers:
+          <strong id="followers" class="stat"><%= @user.followers.count %></strong>
+        </li>
     </ul>
-  </section>
-  </aside>
+  </div>
 </div>
-  <ul class="image-list-group-flex">
+<div class="image-list">
     <% @images.each do |image| %>
-      <li class="image-flex">
-        <%= image_tag image.image_url,class:"image" %>
-      </li>
-    <% end %>  
-  </ul>
+    <div class="col-md-4">
+         <%= image_tag image.image_url,class:"img-responsive" %>     
+    </div>
+    <% end %> 
+</div>

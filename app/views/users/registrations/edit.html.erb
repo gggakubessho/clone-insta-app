@@ -1,8 +1,7 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
-<div class="action-list">
-  <p><%= link_to "Edit my password", edit_user_url(@user),class: "btn btn-password" %></p>
-  <p><%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete,class: "btn btn-danger" %></p>
-</div>
+  <%= button_to "Delete my account", registration_path(resource_name), 
+                                     data: { confirm: "Are you sure?" }, 
+                                     method: :delete,class: "btn btn-danger" %>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -51,6 +50,10 @@
       </label>
     </div>
   </div>
+  <div class="form-group">
+    <%= f.label :password %><br />
+    <%= link_to "Edit my password", edit_user_url(@user) %>
+  </div>  
 
   <div class="actions">
     <%= f.submit "Update",class: "btn btn-primary" %>

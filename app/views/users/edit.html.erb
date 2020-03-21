@@ -1,6 +1,5 @@
 <% provide(:title, "Change Password") %>
-<h2>Change your password</h2>
-
+<h2>Change Password</h2>
 <%= form_with model: @user, url: update_password_users_path, method: :patch do |f| %>
   <%= render "devise/shared/error_messages",resource: @user %>
   <fieldset class="form-group">

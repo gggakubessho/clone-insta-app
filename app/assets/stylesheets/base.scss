@@ -12,6 +12,10 @@
 
 /* universal */
 
+.container {
+    max-width: 80%;
+}
+
 body {
   padding-top: 60px;
 }
@@ -45,7 +49,6 @@ textarea {
 
 /* form */
 .action-list {
-  width:60%;
   display:flex;
   flex-direction: row; 
   justify-content: space-around; 
@@ -58,12 +61,8 @@ textarea {
 }
 
 .btn-upload {
+  width:100%;  
   border:solid 1px;
-}
-
-.btn-password {
-  border:solid 1px;
-  width: 100%;
 }
 
 input, textarea, select, .uneditable-input {
@@ -97,6 +96,17 @@ input {
     font-weight: normal;
   }
 }
+
+/* header */
+
+.navbar{
+  border-radius: 0px;
+}
+
+.search-form {
+  float:left;
+}
+
 
 /* footer */
 .footer{
