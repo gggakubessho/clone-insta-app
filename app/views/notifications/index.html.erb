@@ -1,6 +1,5 @@
 <% provide(:title, 'Notifications') %>
-<h1>Notifications</h1>
-
+<h2>Notifications</h2>
 <%= will_paginate @notifications,class:"pagenation-parent",:previous_label => ' &lt Back', :next_label => 'Next &gt' %>
   <ul class="content list-group">
       <% @notifications.each do |notification| %>
