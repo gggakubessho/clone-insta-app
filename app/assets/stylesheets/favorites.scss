@@ -1,3 +1,14 @@
-// Place all the styles related to the favorites controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.favorite-btn{
+    margin:5px 30%;
+}
+.favorites{
+
+    border-radius:40px;
+}
+.like {
+    background-color:#FF9999;
+}
+
+.unlike {
+    border:solid 1px;    
+}

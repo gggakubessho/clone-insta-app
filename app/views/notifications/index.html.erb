@@ -5,7 +5,7 @@
   <ul class="content list-group">
       <% @notifications.each do |notification| %>
         <li class="list-group-item">
-         <%= notification.visitor_id %> が
+         <%= notification.visitor.name %> が
          <%= notification.image_id %> に
          <%= notification.action %> しました
         </li>

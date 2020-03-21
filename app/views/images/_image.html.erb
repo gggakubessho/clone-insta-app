@@ -2,6 +2,9 @@
   <div class="image">
     <%= image_tag image.image_url,class:"center-block" %>
   </div>
+  <% if controller.controller_name =="home" %>
+    <%= render 'like_form',    image: image %>
+  <% end %>
   <ul id="comment-<%= image.id %>" class="comments list-group">
     <%= render 'comments/comment',image: image %>
   </ul>
