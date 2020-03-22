@@ -1,24 +1,23 @@
-# README
+# ■本番url
+https://gb-clone-insta-app.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# ■未実装
+- FBログイン機能
+- テストコード
 
-Things you may want to cover:
+# ■自分が苦労した点
+- deviseを利用したログイン機構（ここに1週間ほどかかりました）
+- 開発スピードが遅く、期日内に要件通りの機能を実装することが難しかったです。
+(今後時間を作って未実装部分も実装したいと考えています。)
 
-* Ruby version
+# ■学んだ点
+- deviseの利用方法
+- パーシャルの使い方(変数の受け渡し)
+- Ajaxを利用したデータ更新(like,follow,comment)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# ■自慢したい点
+- herokuへの本番反映
+- 画像、コメント一覧部分の共通化(トップページ、写真個別ページ)
+- レスポンシブを意識して画面サイズを変更しても画面崩れがないようにbootstrap標準のクラスを利用しました。
+- awesomeを利用したアイコン表示
+- ブランチ、コミットを小さい機能単位で分割しエラー発生時に原因を特定しやすいように意識しました。
