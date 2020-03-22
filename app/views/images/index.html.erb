@@ -1,0 +1,14 @@
+<% provide(:title, 'My images') %>
+<h2>My images</h2>
+<div class="action-list">
+  <%= link_to "Upload image", new_image_path,class: "btn btn-upload" %>
+</div>
+
+<%= will_paginate @images,class:"pagenation-parent",:previous_label => ' &lt Back', :next_label => 'Next &gt' %>
+  <ul class="content list-group">
+      <% @images.each do |image| %>
+         <%= render "image",image: image %>
+      <% end %>
+  </ul>
+
+<%= will_paginate @images,class:"pagenation-parent",:previous_label => ' &lt Back', :next_label => 'Next &gt' %>

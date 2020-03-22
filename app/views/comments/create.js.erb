@@ -1,0 +1,5 @@
+$("#comment-<%= @image.id %>").html
+("<%= escape_javascript(render('comment',{image: @image})) %>");
+$("#comment-form-<%= @image.id %>").html
+("<%= escape_javascript(render('comment_form',{image: @image})) %>");
+$("textarea").val('')

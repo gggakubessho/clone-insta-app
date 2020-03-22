@@ -1,0 +1,22 @@
+<li class="list-group-item">
+  <% if controller.controller_name =="home" || controller.action_name =="search" %>
+  <div class="center-block">
+    <%= link_to user_path(image.user_id) do %>
+      <%= gravatar_for image.user,size: 20 %>
+      <%= image.user.name %>
+    <% end %>
+  </div>
+  <% end %>
+  <div class="image">
+    <%= image_tag image.image_url,class:"center-block" %>
+  </div>
+  <% if controller.controller_name =="home" %>
+    <%= render 'like_form',    image: image %>
+  <% end %>
+  <ul id="comment-<%= image.id %>" class="comments list-group">
+    <%= render 'comments/comment',image: image %>
+  </ul>
+  <div id="comment-form-<%= image.id %>">
+    <%= render 'comments/comment_form',image: image %>
+  </div>
+</li>

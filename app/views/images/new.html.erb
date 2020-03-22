@@ -1,0 +1,12 @@
+<% provide(:title, "Upload Image") %>
+<h2>Upload Image</h2>
+<%= form_with model: @image,url: images_path do |f| %>
+  <fieldset class="form-group">
+    <div class="form-group">
+      <%= f.file_field :image_url, accept: 'image/jpeg,image/gif,image/png' %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Post",class: "btn btn-primary" %>
+    </div>
+  </fieldset>
+<% end %>

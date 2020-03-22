@@ -1,0 +1,10 @@
+<footer class="footer">
+    <% if user_signed_in? %>
+        <div class= "btn-area">
+            <p><%= link_to images_path do %>
+                    <%= icon("far", "plus-square fa-3x") %>
+                <% end %>
+            </p>
+        </div>
+    <% end %>
+</footer>

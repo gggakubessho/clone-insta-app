@@ -1,0 +1,47 @@
+<% provide(:title, "Show User") %>
+<h2>Show User</h2>
+<div class="user-info">
+  <div>
+    <%= gravatar_for @user %>
+  </div>
+  <div class="user-link">
+    <div class="user-name"><%= @user.name %></div>
+    <% if current_user?(@user) %>
+        <div class="edit-profile">
+          <%= link_to "EditProfile", edit_user_registration_path %>
+        </div>
+    <% else %>  
+        <%= render 'follow_form' if user_signed_in? %>
+    <% end %>    
+    </div>
+  <div class="user-profile">
+    <%= @user.profile %>
+  </div>
+  <div>
+      <ul class="stat-list-group">
+        <li>
+          image_count:
+          <strong id="images_count" class="stat"><%= @images.count %></strong>
+        </li>
+        <li>
+          following:
+          <strong id="following" class="stat"><%= @user.following.count %></strong>
+        </li>
+        <li>
+          followers:
+          <strong id="followers" class="stat"><%= @user.followers.count %></strong>
+        </li>
+    </ul>
+  </div>
+</div>
+<div class="image-list">
+    <% @images.each do |image| %>
+    <div class="col-md-4">
+      <%= link_to image_path(image.id), remote: true,class: "btn" do %>
+          <%= image_tag image.image_url,class:"img-responsive" %>   
+      <% end %>
+    </div>
+    <% end %> 
+</div>
+<!-- for modal -->
+<div class="modal fade" id="image-modal" tabindex="-1"></div>  

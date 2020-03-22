@@ -1,0 +1,7 @@
+<div class="favorite-btn">
+<%= form_for(current_user.favorites.find_by(image_id: image.id),
+             html: { method: :delete },
+             remote: true) do |f| %>
+  <%= f.submit "UnLike", class: "btn favorites unlike btn-sm" %>
+<% end %>
+</div>
