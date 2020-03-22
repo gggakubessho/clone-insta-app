@@ -1,9 +1,7 @@
 <div id="like-form-<%= image.id %>">
-    <div class="favorite-btn">
-        <% if current_user.like?(image) %>
-            <%= render 'unlike',image: image %>
-        <% else %>
-            <%= render 'like',image: image %>
-        <% end %>
-    </div>
+    <% if current_user.like?(image) %>
+        <%= render 'unlike',image: image %>
+    <% else %>
+        <%= render 'like',image: image %>
+    <% end %>
 </div>
