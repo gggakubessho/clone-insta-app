@@ -2,14 +2,14 @@
 
 class ImagesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def show
-    @image = Image.find_by(id: params[:id])    
+    @image = Image.find_by(id: params[:id])
     if @image
       respond_to :js
     else
       redirect_to root_path
-    end    
+    end
   end
 
   def index

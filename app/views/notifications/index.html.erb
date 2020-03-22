@@ -4,10 +4,18 @@
   <ul class="content list-group">
       <% @notifications.each do |notification| %>
         <li class="list-group-item">
-         <%= notification.visitor.name %> が
-         <%= notification.image_id %> に
+         <%= link_to user_path(notification.visitor.id) do %>
+             <%= notification.visitor.name %>
+         <% end %>
+         が
+         <%= link_to image_path(notification.image_id),remote: true do %>
+             画像id<%= notification.image_id %>
+         <% end %>
+         に
          <%= notification.action %> しました
         </li>
       <% end %>
   </ul>
 <%= will_paginate @notifications,class:"pagenation-parent",:previous_label => ' &lt Back', :next_label => 'Next &gt' %>
+<!-- for modal -->
+<div class="modal fade" id="image-modal" tabindex="-1"></div> 

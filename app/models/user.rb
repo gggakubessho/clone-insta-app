@@ -20,6 +20,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable, authentication_keys: [:user_name]
   before_save :downcase_email
+  attr_accessor :term
 
   VALID_URL_REGEX = /\A#{URI.regexp(%w[http https])}\z/.freeze
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
