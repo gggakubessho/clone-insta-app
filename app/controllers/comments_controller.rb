@@ -9,10 +9,7 @@ class CommentsController < ApplicationController
     @comment.from_user_id = current_user.id
     if @comment.save
       @image.create_notification_comment!(current_user, @comment.id)
-      respond_to do |format|
-        format.html { redirect_to @image }
-        format.js
-      end
+      respond_to :js
     else
       redirect_to images_path
     end
