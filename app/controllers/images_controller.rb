@@ -2,6 +2,16 @@
 
 class ImagesController < ApplicationController
   before_action :authenticate_user!
+  
+  def show
+    @image = Image.find_by(id: params[:id])    
+    if @image
+      respond_to :js
+    else
+      redirect_to root_path
+    end    
+  end
+
   def index
     @images = current_user.images.paginate(page: params[:page], per_page: 5)
   end

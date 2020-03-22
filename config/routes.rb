@@ -2,9 +2,7 @@
 
 Rails.application.routes.draw do
   root to: 'home#index'
-  
   get 'home/index'
-  get 'home/show'
   
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -25,7 +23,7 @@ Rails.application.routes.draw do
     end
   end
   get 'images/search', to: 'images#search', as: 'search'
-  resources :images,          only: [:index,:new,:create] do
+  resources :images,          only: [:index,:new,:show,:create] do
     resources :comments,      only: [:index,:new,:create] 
   end
 

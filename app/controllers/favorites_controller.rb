@@ -7,18 +7,11 @@ class FavoritesController < ApplicationController
     current_user.like(@image)
     @image.create_notification_like!(current_user)
     respond_to :js
-    respond_to do |format|
-      format.html { redirect_to @image }
-      format.js
-    end
   end
 
   def destroy
     @image = Favorite.find(params[:id]).image
     current_user.unlike(@image)
-    respond_to do |format|
-      format.html { redirect_to @image }
-      format.js
-    end
+    respond_to :js
   end
 end
